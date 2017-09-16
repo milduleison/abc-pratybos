@@ -43,8 +43,11 @@ let automobiliai = [{
     
        automobiliai.push(duomenys);
        console.log("Duomenys:", duomenys.marke, duomenys.modelis, duomenys.metai);
-        document.write("Duomenys:" + " Automobilio marke - "+ duomenys.marke + " Automobilio modelis - " + duomenys.modelis + " Automobilio metai - " + duomenys.metai); 
-    };  
+        document.getElementById("demo").innerHTML = (duomenys.marke)+" "+(duomenys.modelis)+" "+(duomenys.metai);
+       //document.write(automobiliai)
+      //document.write("Duomenys:" + " Automobilio marke - "+ duomenys.marke + " Automobilio modelis - " + duomenys.modelis + " Automobilio metai - " + duomenys.metai); 
+    }; 
+    
     
 
 //Geles spalva<input type="text" name="text" class="ginput">
