@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue App Demo</title>
+    <script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+  
+</head>
+
+<body>
+    <div id="app">
+      <h1 v-bind:class="myClass">{{ message }}</h1>
+      <h4>{{ data }}</h4>
+      <label for="">
+      <input type="radio" name="isVisible" value = "1" v-model="isVisible">
+      Matomas
+      </label>
+    <label for="">
+      <input type="radio" name="isVisible" value = "0" v-model="isVisible">
+      Nematomas
+      </label>
+    <br>
+    
+      <p v-if="isVisible==='1'">This Vue.js tutorial covers the use of V-bind to attach data models to our view attributes. This is an easy and helpful way to take our Vue data models and attach them to attributes on html elements with the same power of binding that you see with everything else in Vue. great tutorial! i'm learning Vue.js for work and just wanted to say this is really helping me a lot.. subscribed and looking forward to the rest of the series :) ... thanks!</p>
+
+    <hr>
+    <input type="text" name="" id="" v-model="tekstas"><br>
+    Mano tekstas:<strong>{{ tekstas }}</strong>
+
+    <h3>Sunys</h3>
+    <form action="">
+        Veisle: <input type="text" name="veisle" v-model="kitiSunys.veisle" id="">
+        Spalva: <input type="text" name="spalva" v-model="kitiSunys.Spalva" id="">
+        Dydis: <input type="text" name="dydis" v-model="kitiSunys.Dydis" id="">
+        <button type="button" v-on:click="addDog">Spausk</button>
+    </form>
+    <ul v-for="x in sunys">
+        <li>{{ x.veisle }} {{ x.Spalva }} {{ x.Dydis }}</li>
+    </ul>
+    </div>
+<hr>
+
+    <div id="app2">
+        <form action="">
+            <input type="text" name="vardas" v-model="zmones.vardas">
+            <input type="text" name="pavarde" v-model="zmones.pavarde">
+            <input type="text" name="lytis" v-model="zmones.lytis">
+            <input type="text" name="amzius" v-model="zmones.amzius">
+            <button type="button" v-on:click="addPerson">Issaugok</button>
+        </form>
+        <ul v-for="y in zmones">
+        <li>{{ y.vardas }} {{ y.pavarde }} {{ y.lytis }} {{ y.amzius }}</li>
+        </ul>
+    </div>    
+    
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="app2.js"></script>
+</body>
+
+</html>
