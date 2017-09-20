@@ -12,17 +12,27 @@
 
 <body>
     <div id="vue-app">
-        <h1>{{ greet("night") }}</h1>
-        <h2>{{ name }}</h2>
-        <h2>{{ job }}</h2>
-
-        <button v-on:click="add(1)">Prideti vienerius metus</button>
-        <button v-on:click="subtract(1)">Atimti vienerius metus</button>
-        <button v-on:dblclick="add(10)">Prideti 10 metu</button>
-        <button v-on:dblclick="subtract(10)">Atimti 10 metu</button>
+            <h1>{{ greet("night") }}</h1>
+            <h2>{{ name }}</h2>
+            <h2>{{ job }}</h2>
+        <hr>
+                <button v-on:click="add(1)">Prideti vienerius metus</button>
+                <button v-on:click.stop="subtract(1)">Atimti vienerius metus</button>
+                <button v-on:dblclick="add(10)">Prideti 10 metu</button>
+                <button v-on:dblclick="subtract(10)">Atimti 10 metu</button>
        
-        <h3>My age is {{ age }}</h3>
+            <h3>My age is {{ age }}</h3>
         <div id="canvas"v-on:mousemove="updateXY">{{ x }}, {{ y }}</div>
+                <p>Event Modifiers: .stop .prevent .self .once .capture</p>
+                <a v-on:click.prevent href="https://vuejs.org/v2/guide/events.html#Event-Modifiers">Vue.js Evens</a>
+        <hr>
+            <h2>Keyboard Events</h2>
+            <p>Keyboard events: .enter .tab .delete .esc .space .up .down .left .right</p>
+                <label>Name</label>
+                <input type="text"v-on:keyup.enter="logName"/>
+                <label>Age</label>
+                <input type="text"v-on:keyup.enter="logAge"/>
+            <p>Nepamirsk paspausti ENTER(.enter)</p>    
     </div>
     <script type="text/javascript" src="app.js"></script>
 </body>

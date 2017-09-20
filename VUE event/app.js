@@ -22,6 +22,12 @@ let app = new Vue({
     console.log(event);
     this.x=event.offsetX;
     this.y=event.offsetY;
+        },
+        logName:function(){
+            console.log("Tu parasiai savo varda")
+        },
+        logAge:function(){
+            console.log("Tu parasiai savo amziu")
         }
     }
     
