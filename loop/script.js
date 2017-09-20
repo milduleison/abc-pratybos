@@ -24,3 +24,12 @@ for(dienosNr = 1; dienosNr <= menesioD; dienosNr++){
 var vistuSkaicius = vistuSkaicius+2;
 document.write(dienosNr +" Menesio diena "+ "viena vista sudeda " + vistuSkaicius + "kiausiniu, " + "visos vistos kartu"+ (vistuSkaicius*13)  +"</br>");
 }
+
+//Ciklas su objektu
+var text = "";
+var zmogus = {firstname:"Vyatutas", lastname:"Rimsa", miestas:"Vilnius", pomiegis:"Knygos"};
+for(var x in zmogus)
+  {
+    text = text+zmogus[x];
+  }
+  document.write(text);

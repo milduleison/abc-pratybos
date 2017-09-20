@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue App Demo</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+  </head>
+
+<body>
+    <div id="vue-app">
+        <h1>{{ greet("night") }}</h1>
+        <h2>{{ name }}</h2>
+        <h2>{{ job }}</h2>
+
+        <button v-on:click="add(1)">Prideti vienerius metus</button>
+        <button v-on:click="subtract(1)">Atimti vienerius metus</button>
+        <button v-on:dblclick="add(10)">Prideti 10 metu</button>
+        <button v-on:dblclick="subtract(10)">Atimti 10 metu</button>
+       
+        <h3>My age is {{ age }}</h3>
+        <div id="canvas"v-on:mousemove="updateXY">{{ x }}, {{ y }}</div>
+    </div>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
