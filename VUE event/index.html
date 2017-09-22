@@ -30,9 +30,33 @@
             <p>Keyboard events: .enter .tab .delete .esc .space .up .down .left .right</p>
                 <label>Name</label>
                 <input type="text"v-on:keyup.enter="logName"/>
+                
                 <label>Age</label>
                 <input type="text"v-on:keyup.enter="logAge"/>
-            <p>Nepamirsk paspausti ENTER(.enter)</p>    
+                
+            <p>Nepamirsk paspausti ENTER(.enter)</p>  
+            <hr>
+            <h2>V-Model</h2>
+            <label>Dog Name</label>
+                <input type="text"v-model="dogName"/>
+                <span>{{ dogName }}</span>
+                <label>Cat Name</label>
+                <input type="text"v-model="catName"/>
+                <span>{{ catName }}</span>
+                <hr>
+             <button v-on:click="a++">Add to A</button>
+             <button v-on:click="b++">Add to B</button>
+             <p>A - {{ a }}</p>
+             <p>B - {{ b }}</p>
+             <p>Age + A = {{ addToA() }}</p>
+             <p>Age + B = {{ addToB() }}</p>
+            <hr>
+            <h2>Dynamic CSS Classes</h2>
+             <h3>Example 1</h3>
+             <div v-on:click="available=!available" v-bind:class="{available:available}">
+               <span>Milda</span>  
+             </div>
+             <h3>Example 2</h3>
     </div>
     <script type="text/javascript" src="app.js"></script>
 </body>

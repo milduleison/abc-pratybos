@@ -3,9 +3,17 @@ let app = new Vue({
     data: {
         name: "Shaun",
         job: "Plataus profilio darbuotojas",
-        age: "38",
+        age: 38,
         x:0,
-        y:0
+        y:0,
+        justName: "",
+        justAge: "",
+        dogName: "",
+        catName: "",
+        a:0,
+        b:0,
+        available: true,
+        nearby: false
     },
     methods:{
         greet:function(time){
@@ -28,7 +36,15 @@ let app = new Vue({
         },
         logAge:function(){
             console.log("Tu parasiai savo amziu")
-        }
+        },
+        addToA: function(){
+            console.log("addToA");
+            return this.a + this.age;
+        },
+        addToB: function(){
+            console.log("addToB");
+            return this.b + this.age;
+        },
     }
     
     });

@@ -10,3 +10,19 @@ button{
     border: 1px solid #FF5733;
     color: wheat;
 }
+
+span{
+    background: red;
+    display: inline-block;
+    padding: 10px;
+    color: #fff;
+    margin: 10px 0;
+}
+
+.available span{
+    background: green;
+}
+.nearby span:after{
+    content: "nearby";
+    margin-left: 10px;
+}
