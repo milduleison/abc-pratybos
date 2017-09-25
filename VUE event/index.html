@@ -12,10 +12,12 @@
 
 <body>
     <div id="vue-app">
+        <a v-on:click href="https://www.youtube.com/watch?v=2MAoq2-2nnE&index=3&list=PL4cUxeGkcC9gQcYgjhBoeQH7wiAyZNrYa"><h3>Data & Methods</h3></a>
             <h1>{{ greet("night") }}</h1>
             <h2>{{ name }}</h2>
             <h2>{{ job }}</h2>
         <hr>
+        <a v-on:click href="https://www.youtube.com/watch?v=DCwOPBxsXDs&list=PL4cUxeGkcC9gQcYgjhBoeQH7wiAyZNrYa&index=5"><h3>Events</h3></a>
                 <button v-on:click="add(1)">Prideti vienerius metus</button>
                 <button v-on:click.stop="subtract(1)">Atimti vienerius metus</button>
                 <button v-on:dblclick="add(10)">Prideti 10 metu</button>
@@ -26,7 +28,8 @@
                 <p>Event Modifiers: .stop .prevent .self .once .capture</p>
                 <a v-on:click.prevent href="https://vuejs.org/v2/guide/events.html#Event-Modifiers">Vue.js Evens</a>
         <hr>
-            <h2>Keyboard Events</h2>
+            
+            <a v-on:click href="https://www.youtube.com/watch?v=Ni6qd0uRoKY&index=7&list=PL4cUxeGkcC9gQcYgjhBoeQH7wiAyZNrYa"><h3>Keyboard Events</h3></a>
             <p>Keyboard events: .enter .tab .delete .esc .space .up .down .left .right</p>
                 <label>Name</label>
                 <input type="text"v-on:keyup.enter="logName"/>
@@ -36,7 +39,7 @@
                 
             <p>Nepamirsk paspausti ENTER(.enter)</p>  
             <hr>
-            <h2>V-Model</h2>
+            <a v-on:click href="https://www.youtube.com/watch?v=O14qJr5sKXo&list=PL4cUxeGkcC9gQcYgjhBoeQH7wiAyZNrYa&index=9"><h3>V-Model</h3></a>
             <label>Dog Name</label>
                 <input type="text"v-model="dogName"/>
                 <span>{{ dogName }}</span>
@@ -44,19 +47,57 @@
                 <input type="text"v-model="catName"/>
                 <span>{{ catName }}</span>
                 <hr>
-             <button v-on:click="a++">Add to A</button>
+                
+                <a v-on:click href="https://www.youtube.com/watch?v=O14qJr5sKXo&list=PL4cUxeGkcC9gQcYgjhBoeQH7wiAyZNrYa&index=9"><h3>Computed Properties</h3></a>
+            <!--- <button v-on:click="a++">Add to A</button>
              <button v-on:click="b++">Add to B</button>
              <p>A - {{ a }}</p>
              <p>B - {{ b }}</p>
-             <p>Age + A = {{ addToA() }}</p>
-             <p>Age + B = {{ addToB() }}</p>
+             <p>Age + A = {{ addToA }}</p>
+             <p>Age + B = {{ addToB }}</p>-->
             <hr>
-            <h2>Dynamic CSS Classes</h2>
+            
+            <a v-on:click href="https://www.youtube.com/watch?v=4Gh5YcvGDjI&index=10&list=PL4cUxeGkcC9gQcYgjhBoeQH7wiAyZNrYa"><h3>Dynamic CSS Classes</h3></a>
              <h3>Example 1</h3>
-             <div v-on:click="available=!available" v-bind:class="{available:available}">
+             <!---<div v-on:click="available=!available" v-bind:class="{available:available}">
                <span>Milda</span>  
-             </div>
+             </div>-->
              <h3>Example 2</h3>
+             <button v-on:click="nearby=!nearby">Toggle nearby</button>
+             <button v-on:click="available=!available">Toggle available</button>
+             <div v-bind:class="compClasses">
+              <span>Mildiene</span>
+              <hr>
+              
+             <a v-on:click href="https://www.youtube.com/watch?v=0EJqZLcwVLY&index=11&list=PL4cUxeGkcC9gQcYgjhBoeQH7wiAyZNrYa"><h3>Conditionals</h3></a>
+             <button v-on:click="error=!error">Toggle error</button>
+             <button v-on:click="success=!success">Toggle success</button>
+             <p v-if="error">Cia turi buti uzrasas "Error"!</p>
+             <p v-else-if="success">Cia turi buti uzrasas "Success"!</p>
+             <hr>
+             </div>
+            <hr>
+            <a v-on:click href="https://www.youtube.com/watch?v=9Hcswbo0nCY&list=PL4cUxeGkcC9gQcYgjhBoeQH7wiAyZNrYa&index=12"><h3>Looping with v-for</h3></a>
+             <p>Kaip atspausdinti duomenis("string" ir "object") is masyvo</p>
+             <h4>Masyvas:</h4>
+             <ul>
+                 <li v-for="i in characters">{{ i }}</li>
+             </ul>
+                <h4>Object'as:</h4>
+             <ul>
+                 <li v-for="i in ninjas">{{ i.name }}-{{i.age}}</li>
+             </ul>
+                <h4>Object'as išspausdinamas Div'e:</h4>
+             <div v-for="i in ninjas"> <!---vietoje <div> galime irasyti <template>(sablonas)-->
+                 <h3>{{ i.name }}</h3>
+                 <p>{{i.age}}</p>
+            </div>
+                <h4>Object'as Div'e per key ir value:</h4>
+            <template v-for="i in ninjas">
+                <div v-for="(val,key) in i">
+                <p>{{key}} - {{val}}</p>
+                </div>
+            </template>
     </div>
     <script type="text/javascript" src="app.js"></script>
 </body>

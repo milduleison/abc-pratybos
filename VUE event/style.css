@@ -23,6 +23,11 @@ span{
     background: green;
 }
 .nearby span:after{
-    content: "nearby";
-    margin-left: 10px;
+    content:"nearby";
+    margin-left:10px;
+}
+
+a:hover{
+    color: #F87A37;
+    
 }

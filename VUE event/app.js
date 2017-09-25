@@ -12,8 +12,16 @@ let app = new Vue({
         catName: "",
         a:0,
         b:0,
-        available: true,
-        nearby: false
+        available: false,
+        nearby: false,
+        error: false,
+        success: false,
+        characters:["Mario", "Luigi", "Yoshi", "Bowser"],
+        ninjas:[
+            {name: "Austeja", age: 2},
+            {name: "Milda", age: 34},
+            {name: "Vytautas", age: 37},
+        ]
     },
     methods:{
         greet:function(time){
@@ -37,14 +45,24 @@ let app = new Vue({
         logAge:function(){
             console.log("Tu parasiai savo amziu")
         },
-        addToA: function(){
-            console.log("addToA");
-            return this.a + this.age;
-        },
-        addToB: function(){
-            console.log("addToB");
-            return this.b + this.age;
-        },
-    }
-    
-    });
+       
+    },
+
+        computed:{
+        //      addToA:function(){
+        //     console.log("addToA");
+        //     return this.a + this.age;
+        // },
+        //     addToB:function(){
+        //     console.log("addToB");
+        //     return this.b + this.age;
+        // },
+        compClasses:function(){
+            return {
+                available:this.available,
+                nearby:this.nearby
+            }
+        }
+        }
+
+     });
