@@ -89,3 +89,51 @@ let imonesPazeidimai = PAZEIDIMAI.filter(function(item) {
 });
 let priveteVsCompany = (imonesPazeidimai.length * 100) / PAZEIDIMAI.length;
 
+
+
+//1. Su kokios markės (modelio) automobiliais padaryta daugiausia (mažiausia) pažeidimų
+
+let pazeidimaiPagalMarke = {};
+for(let bauda of PAZEIDIMAI) {
+    let gamintojas = bauda.AUTO_MARKE_REGITRA;
+if (!pazeidimaiPagalMarke[gamintojas]){
+    pazeidimaiPagalMarke[gamintojas] = 1;
+}else {
+    pazeidimaiPagalMarke[gamintojas] += 1;
+}
+
+};
+
+// atspausdina tik viena marke kuri padaare daugiausiai pazeidimu
+
+function getThugBrand() {
+    let thugBrand = "";
+    let gamintojasCount = 0;
+    for (let gamintojas in pazeidimaiPagalMarke) {
+        if (pazeidimaiPagalMarke[gamintojas] > gamintojasCount) {
+            gamintojasCount = pazeidimaiPagalMarke[gamintojas];
+            thugBrand = gamintojas;
+        }
+    }
+
+    return thugBrand;
+};
+
+//kokia marke ir kiek pazeidimu dadare daugiausiai
+
+function getAllThugBrand() {
+    let rezultatasBrand = "";
+    let highestCount = 0;
+    for (let gamintojas in pazeidimaiPagalMarke) {
+        let count = pazeidimaiPagalMarke[gamintojas];
+        if (count > highestCount) {
+            highestCount = count;
+            rezultatasBrand = gamintojas;
+        }
+    }
+
+    return{
+       gamintojas: rezultatasBrand,
+       baudos: highestCount
+    };
+}
