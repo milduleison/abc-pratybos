@@ -88,7 +88,7 @@
                  <li v-for="i in ninjas">{{ i.name }}-{{i.age}}</li>
              </ul>
                 <h4>Object'as išspausdinamas Div'e:</h4>
-             <div v-for="i in ninjas"> <!---vietoje <div> galime irasyti <template>(sablonas)-->
+             <div v-for="i in ninjas"> <!---vietoje <div> galima irasyti <template>(sablonas)-->
                  <h3>{{ i.name }}</h3>
                  <p>{{i.age}}</p>
             </div>
@@ -97,7 +97,25 @@
                 <div v-for="(val,key) in i">
                 <p>{{key}} - {{val}}</p>
                 </div>
-            </template>
+            </template>       
+    <hr>
+    <a v-on:click href="https://www.youtube.com/watch?v=EAONyIKrZN0"><h3>Intro to Components</h3></a>
+    <greeting></greeting>
+    <hr>
+    <a v-on:click href="https://www.youtube.com/watch?v=rSyFM2FANtk"><h3>Refs</h3></a>
+    <input type="text" ref="input"/>
+    <button v-on:click="readRefs">Submit</button>
+    </div>
+    <hr>
+    <a v-on:click href="https://www.youtube.com/watch?v=k5p3TozQt84"><h3>Multiple Vue Instances</h3></a>
+    <div id="vue-app-one">
+        <h4>{{title}}</h4>
+        <span>{{ greet }}</span>
+    </div>
+    <div id="vue-app-two">
+        <h4>{{title}}</h4>
+        <span>{{ greet }}</span>
+        <button v-on:click="changeTitle">Pakeisti App One Title</button>
     </div>
     <script type="text/javascript" src="app.js"></script>
 </body>

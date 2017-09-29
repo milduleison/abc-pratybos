@@ -1,3 +1,18 @@
+Vue.component('greeting', {
+template: '<p>Hey ther. I am a re-usable component. We are<strong>{{ name }}</strong> <button v-on:click="changeName">Pakeisti vardus</button></p>',
+
+data: function(){
+    return{
+        name: "Emilija ir Lukas"
+    }
+},
+methods: {
+    changeName: function(){
+        this.name = "Austeja ir Matas";
+    }
+}
+})
+
 let app = new Vue({
     el: "#vue-app",
     data: {
@@ -45,6 +60,10 @@ let app = new Vue({
         logAge:function(){
             console.log("Tu parasiai savo amziu")
         },
+
+        readRefs: function(){
+            console.log(this.$refs.input.value);
+        }
        
     },
 
@@ -64,5 +83,45 @@ let app = new Vue({
             }
         }
         }
+
+     });
+let one = new Vue({
+    el: "#vue-app-one",
+    data: {
+        title: "Vue App One"
+    },
+    methods:{
+      
+       
+    },
+
+    computed:{
+        greet: function(){
+            return "Hello from app one :)"
+        }
+    }
+
+     });
+
+let two = new Vue({
+    el: "#vue-app-two",
+    data: {
+       title: "Vue App Two",
+       
+    },
+
+    methods: {
+      changeTitle: function(){
+        one.title = "Pavadinimas pakeistas";
+       
+      }
+       
+    },
+
+    computed:{
+        greet: function(){
+            return "Hello from app tow ;)"
+        }
+    }
 
      });
