@@ -45,7 +45,7 @@ if(myAge < 18 || myAge > 30 || myAge===25){
     document.write("</br>"+"Oh no-stay home, my frend!")
     
 } else{
-    document.write("</br>"+"FINE, you can come!!!")
+    document.write("FINE, you can come!!!"+"</br>")
 };
 
 //Loop
@@ -165,4 +165,45 @@ button.onclick = function(){
       
   }
 
+};
+// Taimeris
+
+var myMessage = document.getElementById("message");
+function showMessage(){
+    myMessage.className = "show";
+}
+
+setTimeout(showMessage, 3000);
+
+var colourChanger = document.getElementById("colour-changer");
+var colours = ["#0A9900", "#17A589", "#A2D9CE","#FF000A", "#A3F837", "#34495E","#FAFF00", "##E74C3C", "##4A235A", "#BFC9CA", "#F4D03F", "#2ECC71"];
+var counter = 0;
+
+function changeColour(){
+    if(counter >= colours.length){
+        counter = 0;
+    }
+colourChanger.style.background = colours[counter];
+counter++;
+}
+//sustabdom spalvu keitimasis
+var myTimer = setInterval(changeColour, 3000);
+colourChanger.onclick = function(){
+    clearInterval(myTimer);
+    colourChanger.innerHTML = "Timer stopped"
+};
+//formos validacija
+var myForm1 = document.forms.myform;
+var message1 = document.getElementById("message1");
+
+//".onsubmit" yra metodas
+myForm1.onsubmit = function(){
+// tikrinam ar forma tuscia:
+if(myForm1.name.value ==""){
+   message1.innerHTML = "Iveskite varda";
+   return false;
+  } else{
+      message1.innerHTML = "";
+      return true;
+  }
 };
